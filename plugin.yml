@@ -1,0 +1,4 @@
+name: Test_Plugin
+main: com.steelbite.plugin.Main
+version: 1.0
+description: A simple test plugin.
