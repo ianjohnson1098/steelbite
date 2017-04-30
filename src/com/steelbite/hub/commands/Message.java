@@ -1,4 +1,4 @@
-package commands;
+package com.steelbite.hub.commands;
 
 import java.util.HashMap;
 
@@ -8,7 +8,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import com.steelbite.plugin.Main;
+import com.steelbite.hub.Main;
 
 public class Message implements CommandExecutor {
 	
@@ -23,7 +23,7 @@ public class Message implements CommandExecutor {
 	
 	@SuppressWarnings("deprecation")
 	public boolean onCommand(CommandSender sender, Command cmd, String cmdLabel, String args[]) {
-		if (cmdLabel.equalsIgnoreCase("message")) {
+		if (cmdLabel.equalsIgnoreCase("message") || cmdLabel.equalsIgnoreCase("msg") || cmdLabel.equalsIgnoreCase("m") || cmdLabel.equalsIgnoreCase("whisper") || cmdLabel.equalsIgnoreCase("w") || cmdLabel.equalsIgnoreCase("tell") || cmdLabel.equalsIgnoreCase("t")) {
 			if (!(sender instanceof Player)) {
 				sender.sendMessage("§cOnly players can send messages!");
 				return true;
@@ -50,7 +50,7 @@ public class Message implements CommandExecutor {
 			}
 			player.sendMessage("§6To " + receiver.getName() + message);
 			receiver.sendMessage("§6From " + player.getName() + message);
-		} else if (cmdLabel.equalsIgnoreCase("reply")) {
+		} else if (cmdLabel.equalsIgnoreCase("reply") || cmdLabel.equalsIgnoreCase("r")) {
 			if (!(sender instanceof Player)) {
 				sender.sendMessage("§cOnly players can send messages!");
 				return true;

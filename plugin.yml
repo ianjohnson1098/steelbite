@@ -1,10 +1,12 @@
-name: Test_Plugin
-main: com.steelbite.plugin.Main
+name: Hub
+main: com.steelbite.hub.Main
 version: 1.0
-description: A simple test plugin.
+description: The Steelbite hub plugin.
 depends: [nametagedit]
 commands:
   message:
     description: Sends a message to a player. Handy.
+    aliases: [msg, m, whisper, w, tell, t]
   reply:
     description: Sends a reply to a player. Also handy.
+    aliases: [r]
