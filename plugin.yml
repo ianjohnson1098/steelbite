@@ -2,3 +2,9 @@ name: Test_Plugin
 main: com.steelbite.plugin.Main
 version: 1.0
 description: A simple test plugin.
+depends: [nametagedit]
+commands:
+  message:
+    description: Sends a message to a player. Handy.
+  reply:
+    description: Sends a reply to a player. Also handy.
