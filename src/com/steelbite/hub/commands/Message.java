@@ -56,12 +56,12 @@ public class Message implements CommandExecutor {
 				return true;
 			}
 			Player player = (Player) sender;
-			if (!(conversations.containsKey((player.getName())))) {
-				player.sendMessage("§cYou do not have anyone to reply to!");
-				return true;
-			}
 			if (args.length < 1) {
 				player.sendMessage("§cInvalid arguments! Usage: /reply {message}");
+				return true;
+			}
+			if (!(conversations.containsKey((player.getName())))) {
+				player.sendMessage("§cYou do not have anyone to reply to!");
 				return true;
 			}
 			if (Bukkit.getPlayer(conversations.get(player.getName())) == null) {
