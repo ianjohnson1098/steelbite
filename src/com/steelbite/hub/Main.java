@@ -16,6 +16,14 @@ public class Main extends JavaPlugin {
 	
 	private static Main plugin;
 	private Message messenger;
+
+	public static Main getPlugin() {
+		return plugin;
+	}
+
+	public static void setPlugin(Main plugin) {
+		Main.plugin = plugin;
+	}
 	
 	@Override
 	public void onEnable() {
@@ -32,6 +40,8 @@ public class Main extends JavaPlugin {
 		
 		this.getCommand("message").setExecutor(messenger);
 		this.getCommand("reply").setExecutor(messenger);
+		
+		Scoreboards.startUpdater();
 	}
 	
 	public void sendToServer(Player player, String server) {
@@ -39,14 +49,6 @@ public class Main extends JavaPlugin {
 		out.writeUTF("Connect");
 		out.writeUTF(server);
 		player.sendPluginMessage(this, "BungeeCord", out.toByteArray());
-	}
-
-	public static Main getPlugin() {
-		return plugin;
-	}
-
-	public static void setPlugin(Main plugin) {
-		Main.plugin = plugin;
 	}
 	
 }
